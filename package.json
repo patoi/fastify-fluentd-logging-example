@@ -1,0 +1,17 @@
+{
+  "name": "fastify-fluentd-logging-example",
+  "version": "1.0.0",
+  "description": "Example: routing docker log message with fluentd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": ["fluentd", "fastify", "docker", "pino", "nodejs"],
+  "author": "István Pató <istvan.pato@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^1.1.1",
+    "pino-socket": "^1.0.1"
+  }
+}
