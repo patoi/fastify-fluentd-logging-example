@@ -9,7 +9,7 @@
   },
   "keywords": ["fluentd", "fastify", "docker", "pino", "nodejs"],
   "author": "István Pató <istvan.pato@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "fastify": "^1.1.1",
     "pino-socket": "^1.0.1"
