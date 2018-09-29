@@ -1,7 +1,7 @@
 {
   "name": "node-fluentd-issue-lost-logs",
   "version": "1.0.0",
-  "description": "Testing docker with fluentd: https://github.com/fluent/fluentd/issues/1985",
+  "description": "Testing docker with fluentd: https://github.com/moby/moby/issues/27374",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
