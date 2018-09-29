@@ -31,7 +31,6 @@ services:
       driver: fluentd
       options:
         fluentd-async-connect: "true"
-        # fluentd-buffer-limit: "200MB"
         fluentd-address: "0.0.0.0:24224"
         tag: docker
 
