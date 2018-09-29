@@ -5,12 +5,13 @@ services:
   fluentd:
     container_name: fluentd
     restart: "no"
-    image: fluent/fluentd:v1.1.1-onbuild
+    image: fluent/fluentd:v1.2.5-onbuild
     volumes:
       - $PWD:/fluentd/etc
       - /tmp/test_log:/tmp/test_log
     ports:
       - "24224:24224"
+      - "24224:24224/udp"
     networks:
       - test_net
 
@@ -19,7 +20,7 @@ services:
     restart: "no"
     build: .
     ports:
-      - "4000:4000"
+      - "3000:3000"
     networks:
       - test_net
     depends_on:
@@ -29,8 +30,9 @@ services:
     logging:
       driver: fluentd
       options:
-        fluentd-address: "localhost:24224"
         fluentd-async-connect: "true"
+        # fluentd-buffer-limit: "200MB"
+        fluentd-address: "0.0.0.0:24224"
         tag: docker
 
 networks:
