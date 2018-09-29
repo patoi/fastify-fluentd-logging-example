@@ -3,23 +3,25 @@ version: "3"
 services:
 
   fluentd:
-    container_name: test_fluentd
-    restart: always
+    container_name: fluentd
+    restart: "no"
     image: fluent/fluentd:v1.1.1-onbuild
     volumes:
       - $PWD:/fluentd/etc
+      - /tmp/test_log:/tmp/test_log
     ports:
       - "24224:24224"
     networks:
       - test_net
 
   app:
-    restart: always
+    container_name: app
+    restart: "no"
     build: .
     ports:
       - "4000:4000"
     networks:
-        - test_net
+      - test_net
     depends_on:
       - fluentd
     environment:

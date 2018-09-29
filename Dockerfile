@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:10-alpine
 WORKDIR /usr/src/app
 COPY package*.json ./
 # we deliver tests and its dependencies
